@@ -33,6 +33,7 @@ scipy==1.14.0
 six==1.16.0
 smmap==5.0.1
 streamlit==1.36.0
+streamlit-option-menu==0.3.13
 tenacity==8.5.0
 toml==0.10.2
 toolz==0.12.1
