@@ -35,8 +35,165 @@ def modelo_evaluacion_360(datos):
         'consistencia': consistencia
     }
 
+@st.experimental_dialog("Detalle de evaluación", width='large')
+def show_help():
+    st.write("""
+    # Criterios para competencias en Evaluación.
+
+    ## Escala de evaluación general:
+    1. Necesita mejorar significativamente
+    2. Por debajo de las expectativas
+    3. Cumple con las expectativas
+    4. Supera las expectativas
+    5. Desempeño excepcional
+
+    ## 1. Liderazgo
+
+    1. **Necesita mejorar significativamente**
+    - Raramente toma la iniciativa o dirige a otros
+    - No proporciona dirección clara al equipo
+    - Evita la responsabilidad en la toma de decisiones
+
+    2. **Por debajo de las expectativas**
+    - Ocasionalmente toma la iniciativa, pero le falta consistencia
+    - Proporciona dirección limitada o poco clara
+    - Asume responsabilidad de manera inconsistente
+
+    3. **Cumple con las expectativas**
+    - Toma la iniciativa regularmente y dirige a otros cuando es necesario
+    - Proporciona dirección clara la mayoría de las veces
+    - Asume responsabilidad por sus decisiones y las del equipo
+
+    4. **Supera las expectativas**
+    - Lidera de manera proactiva y motiva a otros constantemente
+    - Proporciona dirección clara y estratégica
+    - Asume plena responsabilidad y apoya al equipo en situaciones difíciles
+
+    5. **Desempeño excepcional**
+    - Inspira y empodera a otros para que alcancen su máximo potencial
+    - Establece una visión clara y convincente que guía al equipo
+    - Lidera con el ejemplo y crea un ambiente de confianza y responsabilidad compartida
+
+    ## 2. Comunicación efectiva
+
+    1. **Necesita mejorar significativamente**
+    - Tiene dificultades para expresar ideas de manera clara
+    - Raramente escucha a los demás
+    - No adapta su estilo de comunicación a diferentes audiencias
+
+    2. **Por debajo de las expectativas**
+    - Expresa ideas de manera poco clara o inconsistente
+    - Escucha a los demás de manera superficial
+    - Adapta su comunicación de manera limitada
+
+    3. **Cumple con las expectativas**
+    - Expresa ideas de manera clara y coherente
+    - Escucha activamente a los demás
+    - Adapta su estilo de comunicación según la audiencia
+
+    4. **Supera las expectativas**
+    - Comunica ideas complejas de manera clara y persuasiva
+    - Demuestra excelentes habilidades de escucha activa
+    - Adapta hábilmente su comunicación para maximizar la comprensión
+
+    5. **Desempeño excepcional**
+    - Inspira y motiva a través de una comunicación excepcional
+    - Fomenta un ambiente de comunicación abierta y transparente
+    - Utiliza estratégicamente diversos estilos de comunicación para influir positivamente
+
+    ## 3. Trabajo en equipo
+
+    1. **Necesita mejorar significativamente**
+    - Raramente colabora con otros miembros del equipo
+    - Muestra poca disposición para compartir información o recursos
+    - No cumple con sus responsabilidades dentro del equipo
+
+    2. **Por debajo de las expectativas**
+    - Colabora de manera inconsistente con otros miembros del equipo
+    - Comparte información o recursos solo cuando se le solicita
+    - Cumple parcialmente con sus responsabilidades dentro del equipo
+
+    3. **Cumple con las expectativas**
+    - Colabora regularmente con otros miembros del equipo
+    - Comparte información y recursos de manera proactiva
+    - Cumple con sus responsabilidades dentro del equipo
+
+    4. **Supera las expectativas**
+    - Fomenta activamente la colaboración entre los miembros del equipo
+    - Comparte información y recursos de manera constante y oportuna
+    - Asume responsabilidades adicionales para apoyar al equipo
+
+    5. **Desempeño excepcional**
+    - Lidera iniciativas de colaboración y motiva a otros a trabajar en equipo
+    - Crea sistemas para compartir información y recursos de manera eficiente
+    - Identifica y resuelve problemas que afectan el desempeño del equipo
+
+    ## 4. Resolución de problemas
+
+    1. **Necesita mejorar significativamente**
+    - Tiene dificultades para identificar problemas
+    - Raramente propone soluciones
+    - No implementa soluciones de manera efectiva
+
+    2. **Por debajo de las expectativas**
+    - Identifica problemas de manera inconsistente
+    - Propone soluciones limitadas o poco efectivas
+    - Implementa soluciones de manera parcial o ineficaz
+
+    3. **Cumple con las expectativas**
+    - Identifica problemas de manera oportuna
+    - Propone soluciones viables y efectivas
+    - Implementa soluciones de manera adecuada
+
+    4. **Supera las expectativas**
+    - Anticipa problemas potenciales y actúa proactivamente
+    - Desarrolla soluciones innovadoras y efectivas
+    - Implementa soluciones de manera eficiente y evalúa su impacto
+
+    5. **Desempeño excepcional**
+    - Identifica problemas complejos y sus causas raíz
+    - Crea soluciones transformadoras que abordan múltiples aspectos
+    - Lidera la implementación de soluciones y fomenta una cultura de mejora continua
+
+    ## 5. Adaptabilidad
+
+    1. **Necesita mejorar significativamente**
+    - Se resiste al cambio y a nuevas ideas
+    - Tiene dificultades para ajustarse a situaciones imprevistas
+    - No muestra disposición para aprender nuevas habilidades
+
+    2. **Por debajo de las expectativas**
+    - Acepta el cambio con reluctancia
+    - Se adapta lentamente a situaciones imprevistas
+    - Muestra limitada disposición para aprender nuevas habilidades
+
+    3. **Cumple con las expectativas**
+    - Acepta el cambio de manera positiva
+    - Se adapta adecuadamente a situaciones imprevistas
+    - Está dispuesto a aprender nuevas habilidades cuando es necesario
+
+    4. **Supera las expectativas**
+    - Abraza el cambio y lo ve como una oportunidad
+    - Se adapta rápidamente a situaciones imprevistas
+    - Busca activamente oportunidades para aprender y desarrollar nuevas habilidades
+
+    5. **Desempeño excepcional**
+    - Lidera y promueve el cambio en la organización
+    - Prospera en entornos dinámicos y ayuda a otros a adaptarse
+    - Constantemente adquiere y aplica nuevas habilidades, fomentando una cultura de aprendizaje continuo
+    """)
+
 # Configuración de la página
-st.set_page_config(page_title="Evaluación 360 Grados", layout="wide")
+st.set_page_config(page_title="Evaluación 360 Grados")
+
+# Instrucciones en la barra lateral
+st.sidebar.title('Navegación')
+st.sidebar.write("""
+1. Comience en la página 'Instrucciones' para entender el proceso.
+2. Vaya a 'Captura de Datos' para ingresar las evaluaciones.
+3. Finalmente, revise los 'Resultados' para ver el análisis completo.
+""")
+
 
 # Menú de navegación
 selected = option_menu(
@@ -74,7 +231,7 @@ evaluadores = [
 # Página de instrucciones
 if selected == "Instrucciones":
     st.title('Instrucciones para la Evaluación 360 Grados')
-    st.write("""
+    """
     Bienvenido a la herramienta de Evaluación 360 Grados. Esta evaluación es una oportunidad para recibir retroalimentación valiosa sobre su desempeño desde diferentes perspectivas. Por favor, siga estas instrucciones cuidadosamente:
 
     1. **Reflexión**: Antes de comenzar, tome un momento para reflexionar sobre su desempeño en las diferentes competencias que se evaluarán.
@@ -85,35 +242,13 @@ if selected == "Instrucciones":
 
     4. **Escala de Evaluación y criterios**: 
         1. **Necesita mejorar significativamente**
-        - Raramente colabora con otros miembros del equipo
-        - Muestra poca disposición para compartir información o recursos
-        - No cumple con sus responsabilidades dentro del equipo
-        - Tiene dificultades para comunicarse efectivamente con los demás
-
         2. **Por debajo de las expectativas**
-        - Colabora de manera inconsistente con otros miembros del equipo
-        - Comparte información o recursos solo cuando se le solicita
-        - Cumple parcialmente con sus responsabilidades dentro del equipo
-        - Su comunicación con los demás es limitada o poco clara
-
         3. **Cumple con las expectativas**
-        - Colabora regularmente con otros miembros del equipo
-        - Comparte información y recursos de manera proactiva
-        - Cumple con sus responsabilidades dentro del equipo
-        - Se comunica de manera clara y efectiva con los demás
-
         4. **Supera las expectativas**
-        - Fomenta activamente la colaboración entre los miembros del equipo
-        - Comparte información y recursos de manera constante y oportuna
-        - Asume responsabilidades adicionales para apoyar al equipo
-        - Se comunica de manera excepcional, promoviendo el diálogo y la retroalimentación
-
         5. **Desempeño excepcional**
-        - Lidera iniciativas de colaboración y motiva a otros a trabajar en equipo
-        - Crea sistemas para compartir información y recursos de manera eficiente
-        - Identifica y resuelve problemas que afectan el desempeño del equipo
-        - Su comunicación inspira y influye positivamente en todo el equipo
-
+    """
+    st.button("Mas detalles", on_click=show_help)
+    """
     5. **Objetividad**: Intente ser lo más objetivo posible, basándose en comportamientos observables y resultados concretos.
 
     6. **Confidencialidad**: Sus respuestas serán tratadas con confidencialidad y se utilizarán de forma agregada para proporcionar retroalimentación.
@@ -121,15 +256,17 @@ if selected == "Instrucciones":
     7. **Tiempo**: Tómese el tiempo necesario para completar la evaluación. Una reflexión cuidadosa proporcionará resultados más valiosos.
 
     Recuerde, el objetivo de esta evaluación es fomentar el desarrollo profesional y mejorar el desempeño general. ¡Su participación honesta y reflexiva es crucial para el éxito de este proceso!
-    """)
+    """
 
 # Página de captura de datos
 elif selected == "Captura de Datos":
-    st.title('Captura de Datos - Evaluación 360 Grados')
+    st.title('Captura de Datos - Evaluación 360º')
 
     st.write("""
     Por favor, evalúe cada competencia según la escala proporcionada. Reflexione cuidadosamente sobre cada aspecto antes de asignar una puntuación.
     """)
+
+    st.button("Mas detalles", on_click=show_help)
 
     data = {}
     for evaluador in evaluadores:
@@ -141,7 +278,7 @@ elif selected == "Captura de Datos":
                 min_value=1,
                 max_value=5,
                 value=random.randrange(1, 5),
-                help=f"1 = Necesita mejorar significativamente, 5 = Desempeño sobresaliente"
+                help="1 = Necesita mejorar significativamente, 5 = Desempeño sobresaliente"
             )
             data[evaluador].append(valor)
 
@@ -213,11 +350,3 @@ elif selected == "Resultados":
         - Mientras que valores altos sugieren una mayor diferencia de opiniones entre puntuaciones.
         Competencias con alta desviación estándar pueden requerir una discusión más detallada para entender las diferentes percepciones.
         """)
-
-# Instrucciones en la barra lateral
-st.sidebar.title('Navegación')
-st.sidebar.write("""
-1. Comience en la página 'Instrucciones' para entender el proceso.
-2. Vaya a 'Captura de Datos' para ingresar las evaluaciones.
-3. Finalmente, revise los 'Resultados' para ver el análisis completo.
-""")
