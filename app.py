@@ -277,7 +277,7 @@ elif selected == "Captura de Datos":
                 f"{competencia} - {evaluador}",
                 min_value=1,
                 max_value=5,
-                value=random.randrange(1, 5),
+                value=3,
                 help="1 = Necesita mejorar significativamente, 5 = Desempeño sobresaliente"
             )
             data[evaluador].append(valor)
