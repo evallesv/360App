@@ -7,6 +7,7 @@ import numpy as np
 from scipy import stats
 import plotly.graph_objects as go
 
+
 # Función para el modelo de evaluación 360
 def modelo_evaluacion_360(datos):
     promedios_por_evaluador = datos.mean()
